@@ -1,15 +1,15 @@
 Possible bug in Prototype:
-- When you want to divide then the loading icon is never hide.
+- When you want to divide with 0 then the loading icon is never hide.
 
 Bugs in Build 1:
 - Error messages are not displayed.
 
 Bug in Build 2:
 - Error messages are not displayed. (Except when operation is divide)
-- Add and Concatenate is swapped.
+- Add and Concatenate are swapped.
 
 Bug in Build 3:
-- String can't be concatenate. Error message is displayed.
+- String can't be concatenated. Error message is displayed.
 - Integers only is displayed when the operation is Concatenate.
 
 Bug in Build 4:
@@ -28,7 +28,7 @@ Bug in Build 7:
 - First number can be string when operation is subtract.
 
 Bug in Build 8:
-- When you want to concatenate then the order of the strings are revert. (Num2Num1)
+- When you want to concatenate then the order of the strings are reverted. (Num2Num1)
 - When you want to subtract then the answer is negates of real answer.
 - When you want to divide then the answer is Second number/First number.
 - Wrong error messages.
