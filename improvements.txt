@@ -1,0 +1,8 @@
+Can be improved Prototype with:
+    - Another error message when both of the numbers are not numbers
+    - Integer only can be rounded correctly (Example: when the answer is 34.98765 then with integers only answer is 34 but can be 35)
+
+Can be improved Tests with:
+    - Page object for Basic calculator page
+    - Different report structure where it's easier to see what the problem is with each build
+    - Cross browser testing

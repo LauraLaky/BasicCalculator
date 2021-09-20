@@ -8,12 +8,13 @@ import org.junit.runner.RunWith;
 @RunWith(Courgette.class)
 @CourgetteOptions(
         threads = 10,
-        runLevel = CourgetteRunLevel.SCENARIO,
+        runLevel = CourgetteRunLevel.FEATURE,
         showTestOutput = true,
         reportTargetDir = "build",
         cucumberOptions = @CucumberOptions(
                 features = "src/test/resources/features",
                 glue = "steps",
+                tags = "@clear",
                 plugin = {
                         "pretty",
                         "json:build/cucumber-report/cucumber.json",
