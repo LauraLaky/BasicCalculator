@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.BasicCalculatorPage;
 
 import java.nio.file.Paths;
 
@@ -23,7 +24,8 @@ import static org.hamcrest.Matchers.*;
  * All BDD steps
  */
 public class Steps {
-    private WebDriver webDriver;
+    public WebDriver webDriver;
+    private BasicCalculatorPage calculatorPage;
 
     @Before
     public void setDriver() {
@@ -35,6 +37,8 @@ public class Steps {
         options.addArguments("--window-size=1400,800");
         if (webDriver == null) {
             webDriver = new ChromeDriver(options);
+            webDriver.navigate().to("https://testsheepnz.github.io/BasicCalculator.html");
+            calculatorPage = new BasicCalculatorPage(webDriver);
         }
     }
 
@@ -46,20 +50,15 @@ public class Steps {
         }
     }
 
-    @Given("I am on the Basic calculator page")
-    public void iAmOnTheBasicCalculatorPage() {
-        webDriver.navigate().to("https://testsheepnz.github.io/BasicCalculator.html");
-    }
-
-    @Then("I select {string} build")
+    @Given("I select {string} build")
     public void iSelectXBuild(String build) {
-        new Select(webDriver.findElement(By.id("selectBuild"))).selectByVisibleText(build);
+        calculatorPage.selectBuild(build);
     }
 
     @And("first number is {string}")
     public void firstNumberIsX(String number) {
-        if (webDriver.findElement(By.id("number1Field")).isDisplayed()) {
-            webDriver.findElement(By.id("number1Field")).sendKeys(number);
+        if (calculatorPage.getFirstNumber().isDisplayed()) {
+            calculatorPage.getFirstNumber().sendKeys(number);
         } else {
             Assert.fail("First number field is not displayed!");
         }
@@ -67,8 +66,8 @@ public class Steps {
 
     @And("second number is {string}")
     public void secondNumberIsX(String number) {
-        if (webDriver.findElement(By.id("number2Field")).isDisplayed()) {
-            webDriver.findElement(By.id("number2Field")).sendKeys(number);
+        if (calculatorPage.getSecondNumber().isDisplayed()) {
+            calculatorPage.getSecondNumber().sendKeys(number);
         } else {
             Assert.fail("Second number field is not displayed!");
         }
@@ -76,20 +75,20 @@ public class Steps {
 
     @And("operation is {string}")
     public void operationIsX(String operation) {
-        new Select(webDriver.findElement(By.id("selectOperationDropdown"))).selectByVisibleText(operation);
+        new Select(calculatorPage.getOperationSelector()).selectByVisibleText(operation);
     }
 
     @And("integers only is {}")
     public void integersOnlyIsX(boolean intOnly) {
         if (intOnly) {
-            webDriver.findElement(By.id("integerSelect")).click();
+            calculatorPage.getIntegerCheckBox().click();
         }
     }
 
     @Then("I click on Calculate button")
     public void iClickOnCalculateButton() {
-        if (webDriver.findElement(By.id("calculateButton")).isDisplayed()) {
-            webDriver.findElement(By.id("calculateButton")).click();
+        if (calculatorPage.getCalculateButton().isDisplayed()) {
+            calculatorPage.getCalculateButton().click();
         } else {
             Assert.fail("Calculate button is not displayed!");
         }
@@ -98,14 +97,14 @@ public class Steps {
 
     @And("the answer should be equal to {string}")
     public void theAnswerShouldBeEqualToX(String answer) {
-        new WebDriverWait(webDriver, 5).until(ExpectedConditions.invisibilityOfElementLocated(By.id("calculatingForm")));
-        assertThat(webDriver.findElement(By.id("numberAnswerField")).getText(), is(answer));
+        new WebDriverWait(webDriver, 5).until(ExpectedConditions.invisibilityOfElementLocated(calculatorPage.errorMessageBox));
+        assertThat(calculatorPage.getAnswer().getAttribute("value"), is(answer));
     }
 
     @And("error message should be displayed and matched with {string}")
     public void errorMessageShouldBeDisplayedAndMatchedWithX(String error) {
-        if (webDriver.findElement(By.id("errorMsgField")).isDisplayed()) {
-            assertThat(webDriver.findElement(By.id("errorMsgField")).getText(), is(error));
+        if (calculatorPage.getErrorMessage().isDisplayed()) {
+            assertThat(calculatorPage.getErrorMessage().getText(), is(error));
         } else {
             Assert.fail("Error message is not displayed!");
         }
@@ -114,20 +113,27 @@ public class Steps {
 
     @And("Clear button should be enable")
     public void clearButtonShouldBeEnable() {
-        if (!webDriver.findElement(By.id("clearButton")).isEnabled()) {
+        if (!calculatorPage.getClearButton().isEnabled()) {
             Assert.fail("Clear button is not enabled!");
         }
     }
 
     @And("I click on Clear button")
     public void iClickOnClearButton() {
-        webDriver.findElement(By.id("clearButton")).click();
+        calculatorPage.getClearButton().click();
     }
 
     @And("integers only checkbox should be enable")
     public void integersOnlyCheckboxShouldBeEnable() {
-        if (!webDriver.findElement(By.id("integerSelect")).isEnabled()) {
+        if (!calculatorPage.getIntegerCheckBox().isEnabled()) {
             Assert.fail("Integers only checkbox is not enabled!");
+        }
+    }
+
+    @And("integers only checkbox should be hide")
+    public void integersOnlyCheckboxShouldBeHide() {
+        if (calculatorPage.getIntegerCheckBox().isDisplayed()) {
+            Assert.fail("Integers only checkbox is displayed!");
         }
     }
 }

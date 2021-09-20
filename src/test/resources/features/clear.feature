@@ -2,9 +2,8 @@
 Feature: Clear function tests
 
   @clear
-  Scenario Outline: Clear button should working properly (Build: <Build>)
-    Given I am on the Basic calculator page
-    When I select "<Build>" build
+  Scenario Outline: Clear button should working properly when operation is <Operation> (Build: <Build>)
+    Given I select "<Build>" build
     And Clear button should be enable
     And first number is "2"
     And second number is "3"
