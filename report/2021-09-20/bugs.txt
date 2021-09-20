@@ -1,0 +1,37 @@
+Possible bug in Prototype:
+- When you want to divide then the loading icon is never hide.
+
+Bugs in Build 1:
+- Error messages are not displayed.
+
+Bug in Build 2:
+- Error messages are not displayed. (Except when operation is divide)
+- Add and Concatenate is swapped.
+
+Bug in Build 3:
+- String can't be concatenate. Error message is displayed.
+- Integers only is displayed when the operation is Concatenate.
+
+Bug in Build 4:
+- Integers only is disabled.
+
+Bug in Build 5:
+- Clear button is not enabled by default.
+
+Bug in Build 6:
+- Try to divide with 0. (Error message is not displayed!)
+
+Bug in Build 7:
+- When you want to subtract or add then the answer is negates of second number value.
+- When you want to multiply or divide then the answer is always 0.
+- When you want to concatenate then the answer is the second number value.
+- First number can be string when operation is subtract.
+
+Bug in Build 8:
+- When you want to concatenate then the order of the strings are revert. (Num2Num1)
+- When you want to subtract then the answer is negates of real answer.
+- When you want to divide then the answer is Second number/First number.
+- Wrong error messages.
+
+Bug in Build 9:
+- Missing Second number field and Calculate button.

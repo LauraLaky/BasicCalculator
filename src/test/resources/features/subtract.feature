@@ -11,147 +11,147 @@ Feature: Subtract operation tests
     Then I click on Calculate button
     And the answer should be equal to "<Answer>"
     Examples:
-      | Message                                             | Build     | Number1      | Number2     | IntegersOnly | Answer       |
-      | both of the numbers are positive                    | Prototype | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | Prototype | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | Prototype | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | Prototype | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | Prototype | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | Prototype | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | Prototype | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | Prototype | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | Prototype | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | Prototype | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | Prototype | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | Prototype | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | Prototype |              |             | false        | 0            |
-      | one of the numbers is empty                         | Prototype | 2            |             | false        | 2            |
-      | both of the numbers are positive                    | 1         | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | 1         | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | 1         | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | 1         | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | 1         | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | 1         | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | 1         | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | 1         | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | 1         | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | 1         | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | 1         | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | 1         | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | 1         |              |             | false        | 0            |
-      | one of the numbers is empty                         | 1         | 2            |             | false        | 2            |
-      | both of the numbers are positive                    | 2         | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | 2         | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | 2         | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | 2         | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | 2         | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | 2         | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | 2         | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | 2         | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | 2         | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | 2         | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | 2         | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | 2         | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | 2         |              |             | false        | 0            |
-      | one of the numbers is empty                         | 2         | 2            |             | false        | 2            |
-      | both of the numbers are positive                    | 3         | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | 3         | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | 3         | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | 3         | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | 3         | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | 3         | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | 3         | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | 3         | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | 3         | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | 3         | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | 3         | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | 3         | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | 3         |              |             | false        | 0            |
-      | one of the numbers is empty                         | 3         | 2            |             | false        | 2            |
-      | both of the numbers are positive                    | 4         | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | 4         | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | 4         | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | 4         | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | 4         | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | 4         | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | 4         | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | 4         | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | 4         | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | 4         | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | 4         | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | 4         | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | 4         |              |             | false        | 0            |
-      | one of the numbers is empty                         | 4         | 2            |             | false        | 2            |
-      | both of the numbers are positive                    | 5         | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | 5         | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | 5         | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | 5         | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | 5         | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | 5         | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | 5         | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | 5         | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | 5         | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | 5         | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | 5         | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | 5         | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | 5         |              |             | false        | 0            |
-      | one of the numbers is empty                         | 5         | 2            |             | false        | 2            |
-      | both of the numbers are positive                    | 6         | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | 6         | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | 6         | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | 6         | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | 6         | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | 6         | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | 6         | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | 6         | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | 6         | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | 6         | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | 6         | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | 6         | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | 6         |              |             | false        | 0            |
-      | one of the numbers is empty                         | 6         | 2            |             | false        | 2            |
-      | both of the numbers are positive                    | 7         | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | 7         | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | 7         | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | 7         | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | 7         | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | 7         | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | 7         | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | 7         | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | 7         | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | 7         | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | 7         | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | 7         | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | 7         |              |             | false        | 0            |
-      | one of the numbers is empty                         | 7         | 2            |             | false        | 2            |
-      | both of the numbers are positive                    | 8         | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | 8         | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | 8         | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | 8         | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | 8         | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | 8         | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | 8         | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | 8         | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | 8         | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | 8         | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | 8         | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | 8         | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | 8         |              |             | false        | 0            |
-      | one of the numbers is empty                         | 8         | 2            |             | false        | 2            |
-      | both of the numbers are positive                    | 9         | 1            | +2          | false        | -1           |
-      | both of the numbers are negative                    | 9         | -1           | -2          | false        | 1            |
-      | one of the numbers is negative                      | 9         | -1           | 2           | false        | -3           |
-      | one of the numbers is 0                             | 9         | 1            | 0           | false        | 1            |
-      | both of the numbers are big numbers                 | 9         | -9999999999  | -9999999999 | false        | -19999999998 |
-      | one of the numbers is bigger than possible          | 9         | -10000000000 | -9999999999 | false        | -10999999999 |
-      | both of the numbers are fractions                   | 9         | 1.5          | 10.35       | false        | 8.15         |
-      | one of the numbers is fraction                      | 9         | 34.98765     | 2           | false        | 32.98765     |
-      | both of the numbers are positive with integers only | 9         | 1            | 2           | true         | -1           |
-      | both of the numbers are fraction with integers only | 9         | 1.5          | 10.35       | true         | -8           |
-      | one of the numbers is fraction with integers only   | 9         | 34.98765     | 2           | true         | 32           |
-      | one of the numbers is scientific notation           | 9         | 2.5e+5       | 2           | false        | 249997       |
-      | both of the numbers are empty                       | 9         |              |             | false        | 0            |
-      | one of the numbers is empty                         | 9         | 2            |             | false        | 2            |
+      | Message                                             | Build     | Number1      | Number2    | IntegersOnly | Answer       |
+      | both of the numbers are positive                    | Prototype | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | Prototype | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | Prototype | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | Prototype | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | Prototype | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | Prototype | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | Prototype | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | Prototype | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | Prototype | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | Prototype | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | Prototype | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | Prototype | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | Prototype |              |            | false        | 0            |
+      | one of the numbers is empty                         | Prototype | 2            |            | false        | 2            |
+      | both of the numbers are positive                    | 1         | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | 1         | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | 1         | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | 1         | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | 1         | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | 1         | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | 1         | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | 1         | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | 1         | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | 1         | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | 1         | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | 1         | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | 1         |              |            | false        | 0            |
+      | one of the numbers is empty                         | 1         | 2            |            | false        | 2            |
+      | both of the numbers are positive                    | 2         | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | 2         | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | 2         | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | 2         | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | 2         | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | 2         | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | 2         | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | 2         | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | 2         | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | 2         | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | 2         | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | 2         | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | 2         |              |            | false        | 0            |
+      | one of the numbers is empty                         | 2         | 2            |            | false        | 2            |
+      | both of the numbers are positive                    | 3         | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | 3         | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | 3         | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | 3         | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | 3         | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | 3         | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | 3         | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | 3         | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | 3         | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | 3         | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | 3         | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | 3         | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | 3         |              |            | false        | 0            |
+      | one of the numbers is empty                         | 3         | 2            |            | false        | 2            |
+      | both of the numbers are positive                    | 4         | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | 4         | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | 4         | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | 4         | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | 4         | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | 4         | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | 4         | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | 4         | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | 4         | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | 4         | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | 4         | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | 4         | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | 4         |              |            | false        | 0            |
+      | one of the numbers is empty                         | 4         | 2            |            | false        | 2            |
+      | both of the numbers are positive                    | 5         | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | 5         | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | 5         | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | 5         | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | 5         | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | 5         | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | 5         | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | 5         | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | 5         | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | 5         | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | 5         | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | 5         | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | 5         |              |            | false        | 0            |
+      | one of the numbers is empty                         | 5         | 2            |            | false        | 2            |
+      | both of the numbers are positive                    | 6         | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | 6         | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | 6         | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | 6         | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | 6         | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | 6         | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | 6         | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | 6         | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | 6         | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | 6         | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | 6         | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | 6         | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | 6         |              |            | false        | 0            |
+      | one of the numbers is empty                         | 6         | 2            |            | false        | 2            |
+      | both of the numbers are positive                    | 7         | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | 7         | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | 7         | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | 7         | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | 7         | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | 7         | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | 7         | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | 7         | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | 7         | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | 7         | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | 7         | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | 7         | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | 7         |              |            | false        | 0            |
+      | one of the numbers is empty                         | 7         | 2            |            | false        | 2            |
+      | both of the numbers are positive                    | 8         | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | 8         | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | 8         | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | 8         | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | 8         | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | 8         | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | 8         | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | 8         | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | 8         | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | 8         | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | 8         | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | 8         | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | 8         |              |            | false        | 0            |
+      | one of the numbers is empty                         | 8         | 2            |            | false        | 2            |
+      | both of the numbers are positive                    | 9         | 1            | +2         | false        | -1           |
+      | both of the numbers are negative                    | 9         | -1           | -2         | false        | 1            |
+      | one of the numbers is negative                      | 9         | -1           | 2          | false        | -3           |
+      | one of the numbers is 0                             | 9         | 1            | 0          | false        | 1            |
+      | both of the numbers are big numbers                 | 9         | -9999999999  | 9999999999 | false        | -10999999998 |
+      | one of the numbers is bigger than possible          | 9         | -10000000000 | 9999999999 | false        | -10099999999 |
+      | both of the numbers are fractions                   | 9         | 1.5          | 10.35      | false        | -8.85        |
+      | one of the numbers is fraction                      | 9         | 34.98765     | 2          | false        | 32.98765     |
+      | both of the numbers are positive with integers only | 9         | 1            | 2          | true         | -1           |
+      | both of the numbers are fraction with integers only | 9         | 1.5          | 10.35      | true         | -8           |
+      | one of the numbers is fraction with integers only   | 9         | 34.98765     | 2          | true         | 32           |
+      | one of the numbers is scientific notation           | 9         | 2.5e+5       | 2          | false        | 249998       |
+      | both of the numbers are empty                       | 9         |              |            | false        | 0            |
+      | one of the numbers is empty                         | 9         | 2            |            | false        | 2            |
 
   @subtract-error
   Scenario Outline: Should display error message (<ErrorMessage>) when <Message> (Build: <Build>)

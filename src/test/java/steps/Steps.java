@@ -89,6 +89,7 @@ public class Steps {
     public void iClickOnCalculateButton() {
         if (calculatorPage.getCalculateButton().isDisplayed()) {
             calculatorPage.getCalculateButton().click();
+            new WebDriverWait(webDriver, 5).until(ExpectedConditions.invisibilityOfElementLocated(calculatorPage.errorMessageBox));
         } else {
             Assert.fail("Calculate button is not displayed!");
         }
@@ -97,7 +98,6 @@ public class Steps {
 
     @And("the answer should be equal to {string}")
     public void theAnswerShouldBeEqualToX(String answer) {
-        new WebDriverWait(webDriver, 5).until(ExpectedConditions.invisibilityOfElementLocated(calculatorPage.errorMessageBox));
         assertThat(calculatorPage.getAnswer().getAttribute("value"), is(answer));
     }
 
